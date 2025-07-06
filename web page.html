@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Citizenship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0e0e0;
+      padding: 40px 20px;
+      min-height: 100vh;
+      transition: background 1s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      transition: box-shadow 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 6s linear infinite;
+    }
+
+    section {
+      margin-bottom: 25px;
+      padding: 20px;
+      border-left: 4px solid #00ffff;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+      transition: 0.2s ease;
+    }
+
+    section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 18px #00ffff;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      transition: color 0.5s;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    strong {
+      color: #00e5ff;
+    }
+
+    @keyframes rainbowText {
+      0% { background-position: 0% }
+      100% { background-position: 400% }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="main-title">Digital Citizenship</h1>
+
+    <section>
+      <h2>1) What is Digital Citizenship?</h2>
+      <p>Digital citizenship means using the internet and digital technology in a responsible, safe, and respectful way. It includes knowing your rights and duties as a digital user.</p>
+    </section>
+
+    <section>
+      <h2>2) Actions That Show Good and Bad Digital Citizenship</h2>
+      <p><strong>Good Actions:</strong> Respecting others online, protecting your privacy, reporting harmful behavior, and thinking before posting.</p>
+      <p><strong>Bad Actions:</strong> Cyberbullying, spreading false information, hacking, and using inappropriate language.</p>
+    </section>
+
+    <section>
+      <h2>3) Importance of Digital Citizenship</h2>
+      <p>It helps us stay safe, respectful, and responsible online. Being a good digital citizen builds a better online community for everyone and protects us from risks.</p>
+    </section>
+
+    <section>
+      <h2>4) How Can We Promote It?</h2>
+      <p>We can promote digital citizenship by teaching others, setting good examples, following digital rules, and using technology to spread positivity.</p>
+    </section>
+
+    <section>
+      <h2>5) Digital Footprint</h2>
+      <p>A digital footprint is the trail of data you leave behind when you use the internet. Every post, like, comment, or website you visit adds to your online history. Always think before you click!</p>
+    </section>
+  </div>
+
+  <script>
+    // Dynamic rainbow border glow on mousemove
+    document.body.addEventListener("mousemove", (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      const angle = Math.floor((x + y) * 360);
+
+      document.documentElement.style.setProperty('--angle', `${angle}deg`);
+
+      const container = document.querySelector('.container');
+      container.style.boxShadow = `0 0 25px hsl(${angle}, 100%, 70%)`;
+
+      document.querySelectorAll("h2").forEach((h) => {
+        h.style.color = `hsl(${angle}, 100%, 75%)`;
+      });
+    });
+  </script>
+</body>
+</html>
